@@ -31,14 +31,12 @@ function AddUser () {
 	}
 
 	const updateUser = (id, updatedUser) => {
-		setEditing(false)
-
+		setEditing(false)	
 		setUsers(users.map(user => (user.id === id ? updatedUser : user)))
 	}
 
 	const editRow = user => {
 		setEditing(true)
-
 		setCurrentUser({ id: user.id, name: user.name, email: user.email })
 	}
 

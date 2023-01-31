@@ -12,19 +12,19 @@ function AddUserForm(props) {
 
   return (
     <form
+     
       onSubmit={event => {
         event.preventDefault()
         if (!user.name || !user.email) return
-
         props.addUser(user)
         setUser(initialFormState)
       }}
     >
      
-      <input type="text" name="name" placeholder='Name' value={user.name} onChange={handleInputChange} /> &nbsp;
+      <input type="text" data-testid="OnchangeName" name="name" placeholder='Name' value={user.name} onChange={handleInputChange} /> &nbsp;
       
-      <input type="text" name="email" placeholder='Email' value={user.email} onChange={handleInputChange} /> &nbsp;
-      <button className='btn btn-primary'>Add user</button>
+      <input type="text"  data-testid="OnchangeEmail" name="email" placeholder='Email' value={user.email} onChange={handleInputChange} /> &nbsp;
+      <button  data-testid="add-user"  className='btn btn-primary' >Add user</button>
     </form>
   )
 }

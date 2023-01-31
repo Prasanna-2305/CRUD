@@ -13,12 +13,13 @@ function UserTable(props) {
         </thead>
         <tbody>
           {props.users.length > 0 ? (
-            props.users.map(user => (
+            props.users.map((user,index) => (
               <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
                   <button
+                    data-testid={`editRow-btn-${index}`}
                     onClick={() => {
                       props.editRow(user)
                     }}
@@ -27,8 +28,9 @@ function UserTable(props) {
                     Edit
                   </button>&nbsp;
                   <button 
+                    data-testid={`delete-btn-${index}`}
                     onClick={() => props.deleteUser(user.id)}
-                    className="btn btn-primary"
+                    className='btn btn-primary'
                   >
                     Delete
                   </button>

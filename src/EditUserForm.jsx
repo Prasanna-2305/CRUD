@@ -21,15 +21,13 @@ function EditUserForm(props) {
         <form
             onSubmit={event => {
                 event.preventDefault()
-
                 props.updateUser(user.id, user)
             }}
-        >
-        
-            <input type="text" name="name" value={user.name} onChange={handleInputChange} />&nbsp;    
-            <input type="text" name="email" value={user.email} onChange={handleInputChange} />&nbsp;
-            <button className='btn btn-info'>Update</button>&nbsp;
-            <button onClick={() => props.setEditing(false)} className="btn btn-info">
+        > 
+            <input data-testid="update-Name" type="text" name="name" value={user.name} onChange={handleInputChange} />&nbsp;    
+            <input data-testid="update-Email" type="text" name="email" value={user.email} onChange={handleInputChange} />&nbsp;
+            <button className='btn btn-info'  data-testid="update-User" >Update</button>&nbsp;
+            <button data-testid="update-button" onClick={() => props.setEditing(false)} className="btn btn-info">
                 Cancel
             </button>
         </form>
