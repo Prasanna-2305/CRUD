@@ -19,6 +19,7 @@ function UserTable(props) {
                 <td>{user.email}</td>
                 <td>
                   <button
+                    data-testid={`edit-btn-${user.id}`}
                     onClick={() => {
                       props.editRow(user)
                     }}
@@ -28,6 +29,7 @@ function UserTable(props) {
                   </button>&nbsp;
                   <button 
                     onClick={() => props.deleteUser(user.id)}
+                    data-testid = {`delete-btn-${user.id}`}
                     className="btn btn-primary"
                   >
                     Delete
